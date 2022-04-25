@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
-from blogging.models import Post
+from blogging.models import Post, Categories
 
 
 class PostTestCase(TestCase):
@@ -14,4 +14,14 @@ class PostTestCase(TestCase):
         p1 = Post(title=expected)
         actual = str(p1)
         self.assertEqual(expected, actual)
+
+
+class CategoriesTestCase(TestCase):
+
+    def test_string_representation(self):
+        expected = "A Category"
+        c1 = Categories(name=expected)
+        actual = str(c1)
+        self.assertEqual(expected, actual)
+
 
