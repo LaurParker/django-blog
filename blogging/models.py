@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib import admin
 from django.contrib.auth.models import User
 
 
@@ -12,6 +13,9 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    class AuthorAdmin(admin.ModelAdmin):
+        pass
 
 
 class Categories(models.Model):
